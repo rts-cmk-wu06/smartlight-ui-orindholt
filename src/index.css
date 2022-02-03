@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+.profileIcon {
+  @apply after:content-[""] after:w-[10px] after:h-[10px] after:bg-salmon after:rounded-full after:inline-block after:top-[5px] after:right-0 after:absolute relative
+}
 
 * {
   margin: 0;
@@ -13,6 +17,7 @@
 body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
+  @apply text-black
 }
 
 img {
