@@ -4,9 +4,8 @@ import PageTitle from '../Components/PageTitle';
 import ProfileIcon from "../Components/ProfileIcon";
 
 const Header = () => {
-  
   return (
-    <div className="flex justify-between items-center p-6">
+    <header className="flex justify-between items-center p-6 pt-[60px] relative">
       <Routes>
         <Route path="/" element={
           <>
@@ -21,7 +20,7 @@ const Header = () => {
           </>
         }/>
       </Routes>
-    </div>
+    </header>
   );
 }
  

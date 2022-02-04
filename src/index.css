@@ -8,6 +8,10 @@
   @apply after:content-[""] after:w-[10px] after:h-[10px] after:bg-salmon after:rounded-full after:inline-block after:top-[5px] after:right-0 after:absolute relative
 }
 
+.thumb::-webkit-slider-thumb {
+    @apply appearance-none bg-white w-4 h-4 rounded-full shadow-md cursor-pointer;
+}
+
 * {
   margin: 0;
   padding: 0;

@@ -42,8 +42,8 @@ const roomArray = [
 const Home = () => {
   return (
     <>
-      <h2>All Rooms</h2>
-      <div className="grid grid-cols-2 justify-between gap-y-6">
+      <h2 className="pb-3">All Rooms</h2>
+      <div className="flex flex-wrap justify-between gap-y-6">
         {roomArray.map(({room, icon, lights}, i)=>{
           return <RoomLink key={i} room={room} icon={icon} lights={lights} />
         })}
