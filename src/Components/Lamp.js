@@ -1,13 +1,22 @@
-const Lamp = ({color = "white"}) => {
+import { motion } from "framer-motion";
+import { useContext } from "react";
+import { BulbContext } from '../Utility/BulbContext';
+
+const Lamp = ({color}) => {
+  const {sliderVal} = useContext(BulbContext);
+
   return (
-    <svg
-      className="absolute top-0 right-6"
+    <motion.svg
+      animate={{y: 30}}
+      transition={{duration: 1, delay: 1}}
+      className="absolute top-[-30px] right-6"
       xmlns="http://www.w3.org/2000/svg"
       width="139"
       height="159"
       viewBox="0 0 139 159"
     >
       <defs>
+        {/* LIGHT BULB GLOW */}
         <filter
           id="Ellipse_10"
           width="70"
@@ -18,11 +27,14 @@ const Lamp = ({color = "white"}) => {
         >
           <feOffset dy="3"></feOffset>
           <feGaussianBlur result="blur" stdDeviation="8"></feGaussianBlur>
-          <feFlood floodColor={color}></feFlood>
+          <feFlood floodColor={color} floodOpacity={sliderVal/100}></feFlood>
           <feComposite in2="blur" operator="in"></feComposite>
           <feComposite in="SourceGraphic"></feComposite>
         </filter>
+        {/* LIGHT BULB GLOW END */}
       </defs>
+
+      {/* LIGHT BULB */}
       <g data-name="light bulb" transform="translate(-204 4)">
         <g filter="url(#Ellipse_10)" transform="translate(204 -4)">
           <circle
@@ -30,6 +42,7 @@ const Lamp = ({color = "white"}) => {
             cy="11"
             r="11"
             fill={color}
+            style={{filter: `brightness(${sliderVal}%)`}}
             data-name="Ellipse 10"
             transform="translate(59 110)"
           ></circle>
@@ -56,7 +69,8 @@ const Lamp = ({color = "white"}) => {
           transform="rotate(-23 296.938 -716.633)"
         ></rect>
       </g>
-    </svg>
+      {/* LIGHT BULB END */}
+    </motion.svg>
   );
 }
 
