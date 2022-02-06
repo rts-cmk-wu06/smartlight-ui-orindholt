@@ -1,13 +1,16 @@
 import { ReactComponent as ArrowIcon } from '../assets/svg/arrow.svg';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
-const PageTitle = () => {
-  const { id } = useParams();
+const PageTitle = ({ title }) => {
+  const fixedPath = title.replace("%20", " ").replace("/", "");
   
   return (
-    <h1 className="text-3xl text-white max-w-[160px] ">
-      {id ? <Link to="/"><ArrowIcon className="inline" />{' '}{id}</Link> : "Control Panel"}
-    </h1>
+    <motion.h1 
+      className="text-3xl text-white max-w-[160px]"
+    >
+      {fixedPath ? <Link to="/"><ArrowIcon className="inline" />{' '}{fixedPath}</Link> : "Control Panel"}
+    </motion.h1>
   );
 }
  
