@@ -9,7 +9,11 @@
 }
 
 .thumb::-webkit-slider-thumb {
-    @apply appearance-none bg-white w-4 h-4 rounded-full shadow-md cursor-pointer;
+    @apply appearance-none bg-white w-4 h-4 rounded-full shadow-md cursor-pointer transition-all;
+}
+
+h2 {
+  @apply text-[#002D67]
 }
 
 * {
