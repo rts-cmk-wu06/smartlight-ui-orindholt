@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const RoomLink = ({room, icon, lights}) => {
   return (
     <Link 
-      to={room.toLowerCase().replace(" ", "")} 
+      to={room} 
       className="bg-white py-6 px-5 rounded-3xl w-[150px] h-[150px] flex flex-col justify-between"
     >
       {icon}
