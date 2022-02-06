@@ -1,29 +1,39 @@
-import { createContext, useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { useState } from 'react';
+import { Route, Routes , useLocation} from 'react-router-dom';
 import Home from './Pages/Home';
 import Detail from './Pages/Detail';
 import Header from './Templates/Header';
 import Footer from './Templates/Footer';
-import LightContext from './Utility/LightContext';
-
-const IntensityContext = createContext();
+import { BulbContext } from './Utility/BulbContext';
+import Main from './Templates/Main';
 
 function App() {
-  const [sliderVal, setSliderVal] = useState(null);
+  const [sliderVal, setSliderVal] = useState(100);
+  const [colorPick, setColorPick] = useState("white");
+  const location = useLocation();
+
   return (
-    <div className="App max-w-sm mx-auto bg-blue bg-[url('./assets/svg/circles.svg')] bg-[center_top_-4rem]">
-        <Router>
-          <LightContext.Provider value="context">
-              <Header />
-            <main className="bg-gray p-6 rounded-t-3xl">
+    <div 
+      className={`App 
+        transition-[background-position]
+        duration-1000
+        max-w-sm mx-auto 
+        bg-blue bg-[url('./assets/svg/circles.svg')] bg-[center_top_${location.pathname.length > 2 ? "-6rem" : "-4rem"}] 
+        h-[800px] 
+        flex flex-col justify-between`}
+    >
+        <BulbContext.Provider value={{sliderVal, setSliderVal, colorPick, setColorPick}}>
+          <Header />
+          <div>
+            <Main>
               <Routes>
                 <Route path="/" element={<Home />}/>
                 <Route path="/:id" element={<Detail />} />
               </Routes>
-            </main>
+            </Main>
             <Footer />
-          </LightContext.Provider>
-        </Router>
+          </div>
+        </BulbContext.Provider>
     </div>
   );
 }
