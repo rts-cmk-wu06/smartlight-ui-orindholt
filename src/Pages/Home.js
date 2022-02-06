@@ -5,6 +5,7 @@ import { ReactComponent as BathIcon } from '../assets/svg/bathroom.svg';
 import { ReactComponent as OutdoorIcon } from '../assets/svg/outdoor.svg';
 import { ReactComponent as BalconyIcon } from '../assets/svg/balcony.svg';
 import RoomLink from '../Components/RoomLink';
+import { motion } from 'framer-motion';
 
 const roomArray = [
   {
@@ -39,16 +40,31 @@ const roomArray = [
   }
 ];
 
+const fadeVariants = {
+  hidden :{opacity: 0},
+  shown: {
+    opacity: 1, 
+    transition: {
+      duration: 1
+    }
+  },
+}
+
 const Home = () => {
   return (
-    <>
-      <h2 className="pb-3">All Rooms</h2>
-      <div className="flex flex-wrap justify-between gap-y-6">
-        {roomArray.map(({room, icon, lights}, i)=>{
-          return <RoomLink key={i} room={room} icon={icon} lights={lights} />
-        })}
-      </div>
-    </>
+    <motion.div 
+      variants={fadeVariants} animate="shown" initial="hidden"
+      className="flex flex-col justify-between h-full"
+    >
+      <h2>All Rooms</h2>
+      <nav>
+        <ul className="flex flex-wrap justify-between gap-y-6">
+          {roomArray.map(({room, icon, lights}, i)=>{
+            return <RoomLink key={i} room={room} icon={icon} lights={lights} />
+          })}
+        </ul>
+      </nav>
+    </motion.div>
   )
 }
  
