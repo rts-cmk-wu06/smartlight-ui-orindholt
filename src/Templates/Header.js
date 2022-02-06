@@ -1,29 +1,29 @@
-import { useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { useContext } from 'react';
+import { Route, Routes, useLocation } from 'react-router-dom';
+import HeaderContent from '../Components/HeaderContent';
 import Lamp from '../Components/Lamp';
 import PageTitle from '../Components/PageTitle';
 import ProfileIcon from "../Components/ProfileIcon";
-import LightContext from './Utility/LightContext';
-
+import { BulbContext } from '../Utility/BulbContext';
 
 const Header = () => {
-  const context = useContext(LightContext);
-  const [sliderVal, setSliderVal] = useState(null);
-  console.log(context);
+  const { colorPick } = useContext(BulbContext);
+  const location = useLocation();
+  
   return (
-    <header className="flex justify-between items-center p-6 pt-[60px] relative">
+    <header className="p-6 pt-[60px] pb-0 relative">
       <Routes>
         <Route path="/" element={
-          <>
-            <PageTitle />
+          <HeaderContent>
+            <PageTitle title={location.pathname} />
             <ProfileIcon />
-          </>
+          </HeaderContent>
         }/>
         <Route path="/:id" element={
-          <>
-            <PageTitle />
-            <Lamp color={""} />
-          </>
+          <HeaderContent>
+            <PageTitle title={location.pathname} />
+            <Lamp color={colorPick} />
+          </HeaderContent>
         }/>
       </Routes>
     </header>
