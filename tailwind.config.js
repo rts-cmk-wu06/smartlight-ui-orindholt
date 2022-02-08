@@ -16,10 +16,23 @@ module.exports = {
         lightBlue: "#94CAEB",
         purple: "#A594EB",
         pink: "#DE94EB",
-        yellow: "#EBD094",
+        lightYellow: "#EBD094",
+        yellow: "#FFD239",
       },
       maxWidth: {
         sm: "375px"
+      },
+      keyframes: {
+        slide: {
+          "0%": {transform: "translateX(-100%)"},
+          "100%": {transform: "translateX(0)"}
+        }
+      },
+      animation: {
+        "slide": "slide 1s 1s linear forwards"
+      },
+      boxShadow: {
+        scene: "0px 2px 8px rgba(0, 0, 0, 0.2)"
       }
     },
   },
