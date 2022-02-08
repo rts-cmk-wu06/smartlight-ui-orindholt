@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const Main = ({children}) => {
-  const url = useLocation();
+  const { pathname }= useLocation();
   const variants = {
     initial: {height: 580, transition: {
       type: "tween",
@@ -20,7 +20,7 @@ const Main = ({children}) => {
     <motion.main 
       variants={variants}
       initial="initial"
-      animate={url.pathname.length > 2 ? "animate" : "initial"}
+      animate={pathname.length > 2 ? "animate" : "initial"}
       className="bg-gray p-6 rounded-t-3xl h-[580px]"
     >
       {children}
