@@ -7,22 +7,31 @@ import Footer from './Templates/Footer';
 import { BulbContext } from './Utility/BulbContext';
 import Main from './Templates/Main';
 
+
 function App() {
   const [sliderVal, setSliderVal] = useState(100);
   const [colorPick, setColorPick] = useState("white");
-  const location = useLocation();
+  const [lightAmount, setLightAmount] = useState(0);
+  const { pathname } = useLocation();
 
   return (
     <div 
-      className={`App 
+      style={{backgroundPosition: `center top ${pathname.length > 2 ? "20%" : "-10%"}`}}
+      className="App 
         transition-[background-position]
         duration-1000
         max-w-sm mx-auto 
-        bg-blue bg-[url('./assets/svg/circles.svg')] bg-[center_top_${location.pathname.length > 2 ? "-6rem" : "-4rem"}] 
-        h-[800px] 
-        flex flex-col justify-between`}
+        bg-blue bg-[url('./assets/svg/circles.svg')]
+        h-[100vh] 
+        flex flex-col justify-between
+        bg-no-repeat
+        overflow-hidden"
     >
-        <BulbContext.Provider value={{sliderVal, setSliderVal, colorPick, setColorPick}}>
+        <BulbContext.Provider value={{
+          sliderVal, setSliderVal, 
+          colorPick, setColorPick,
+          lightAmount, setLightAmount,
+        }}>
           <Header />
           <div>
             <Main>
