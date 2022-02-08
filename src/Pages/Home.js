@@ -54,7 +54,7 @@ const Home = () => {
   return (
     <motion.div 
       variants={fadeVariants} animate="shown" initial="hidden"
-      className="flex flex-col justify-between h-full"
+      className="flex flex-col gap-2 h-full"
     >
       <h2>All Rooms</h2>
       <nav>
