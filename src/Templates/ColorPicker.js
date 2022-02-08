@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import Color from "./Color";
-import DetailTitle from "./DetailTitle";
-import NewColor from "./NewColor";
+import Color from "../Components/Color";
+import DetailTitle from "../Components/DetailTitle";
+import NewColor from "../Components/NewColor";
 
 const standardColors = [
   "#FF9898",
