@@ -35,7 +35,7 @@ const LightScenes = () => {
       initial={{x: "100vw"}} animate={{x:0}} transition={{duration: 1, ease: "easeOut"}}
     >
       {scenes.map(({icon, room}, i)=>{
-        if(i >= lightAmount) return
+        if(i >= lightAmount) return null
         return <LightScene room={room} icon={icon} key={i} />
       })}
     </motion.div>
