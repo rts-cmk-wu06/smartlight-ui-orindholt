@@ -8,8 +8,12 @@
   @apply after:content-[""] after:w-[10px] after:h-[10px] after:bg-salmon after:rounded-full after:inline-block after:top-[5px] after:right-0 after:absolute relative
 }
 
-.thumb::-webkit-slider-thumb {
-    @apply appearance-none bg-white w-4 h-4 rounded-full shadow-md cursor-pointer transition-all;
+.slider {
+  @apply w-full outline-none bg-darkGray appearance-none mx-4 h-[1px] 
+}
+
+.slider::-webkit-slider-thumb {
+    @apply appearance-none bg-white w-4 h-4 rounded-full shadow-md animate-slide cursor-grab active:cursor-grabbing mt-[-8px];
 }
 
 h2 {
@@ -41,6 +45,7 @@ a {
 button {
   background: none;
   cursor: pointer;
+  user-select: none;
 }
 
 button,
