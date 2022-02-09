@@ -14,7 +14,7 @@ const RoomLink = ({room, icon, lights}) => {
     >
       {icon}
       <h3>{room}</h3>
-      <p className="text-orange">{lights} Lights</p>
+      <p className="text-orange">{lights}{' '}{lights == 1 ? "Light" : "Lights"}</p>
     </Link>
     </li>
   );
