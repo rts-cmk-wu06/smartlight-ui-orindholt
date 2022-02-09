@@ -4,13 +4,13 @@ import Home from './Pages/Home';
 import Detail from './Pages/Detail';
 import Header from './Templates/Header';
 import Footer from './Templates/Footer';
-import { BulbContext } from './Utility/BulbContext';
+import { LampContext } from './Utility/LampContext';
 import Main from './Templates/Main';
 
 
 function App() {
   const [sliderVal, setSliderVal] = useState(100);
-  const [colorPick, setColorPick] = useState("white");
+  const [lampColor, setLampColor] = useState("white");
   const [lightAmount, setLightAmount] = useState(0);
   const { pathname } = useLocation();
 
@@ -27,9 +27,9 @@ function App() {
         bg-no-repeat
         overflow-hidden"
     >
-        <BulbContext.Provider value={{
+        <LampContext.Provider value={{
           sliderVal, setSliderVal, 
-          colorPick, setColorPick,
+          lampColor, setLampColor,
           lightAmount, setLightAmount,
         }}>
           <Header />
@@ -42,7 +42,7 @@ function App() {
             </Main>
             <Footer />
           </div>
-        </BulbContext.Provider>
+        </LampContext.Provider>
     </div>
   );
 }

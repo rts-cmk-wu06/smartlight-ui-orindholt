@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { useContext } from "react";
-import { BulbContext } from '../Utility/BulbContext';
+import { LampContext } from '../Utility/LampContext';
 
 const Lamp = ({color}) => {
-  const {sliderVal} = useContext(BulbContext);
+  const {sliderVal} = useContext(LampContext);
 
   return (
     <motion.svg

@@ -2,7 +2,7 @@ import { ReactComponent as Bulb } from '../assets/svg/sceneBulb.svg';
 import { ReactComponent as Desk } from '../assets/svg/deskIcon.svg';
 import { ReactComponent as Bed } from '../assets/svg/bedIcon.svg';
 
-import { BulbContext } from '../Utility/BulbContext';
+import { LampContext } from '../Utility/LampContext';
 import { useContext, useEffect, useState } from 'react';
 import LightScene from "../Components/LightScene"
 import { motion } from "framer-motion";
@@ -23,7 +23,7 @@ const scenes = [
 ]
 
 const LightScenes = () => {
-  const { lightAmount } = useContext(BulbContext);
+  const { lightAmount } = useContext(LampContext);
   const [loaded, setLoaded] = useState(false)
   useEffect(()=>{
     setTimeout(()=>{setLoaded(true)}, 1000);

@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { BulbContext } from '../Utility/BulbContext';
+import { LampContext } from '../Utility/LampContext';
 
 const Icon = () => {
-  const {sliderVal, setSliderVal} = useContext(BulbContext);
+  const {sliderVal, setSliderVal} = useContext(LampContext);
   return (
     <button 
       className="bg-white w-8 h-8 flex justify-center items-center absolute rounded-full cursor-pointer top-[-40px] right-0 shadow-md"

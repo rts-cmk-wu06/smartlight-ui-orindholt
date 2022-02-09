@@ -5,11 +5,11 @@ import Lamp from '../Components/Lamp';
 import { Lights } from '../Components/Lights';
 import PageTitle from '../Components/PageTitle';
 import ProfileIcon from "../Components/ProfileIcon";
-import { BulbContext } from '../Utility/BulbContext';
+import { LampContext } from '../Utility/LampContext';
 import LightScenes from './LightScenes';
 
 const Header = () => {
-  const { colorPick, lightAmount } = useContext(BulbContext);
+  const { lampColor, lightAmount } = useContext(LampContext);
   const { pathname } = useLocation();
   
   return (
@@ -28,7 +28,7 @@ const Header = () => {
               <Lights amount={lightAmount} />
               <LightScenes />
             </div>
-            <Lamp color={colorPick} />
+            <Lamp color={lampColor} />
           </HeaderContent>
         }/>
       </Routes>

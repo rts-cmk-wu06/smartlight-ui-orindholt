@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { BulbContext } from '../Utility/BulbContext';
+import { LampContext } from '../Utility/LampContext';
 
 const RoomLink = ({room, icon, lights}) => {
-  const { setLightAmount } = useContext(BulbContext);
+  const { setLightAmount } = useContext(LampContext);
 
   return (
     <li>

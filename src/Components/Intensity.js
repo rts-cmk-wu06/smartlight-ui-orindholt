@@ -1,12 +1,12 @@
 import { useContext } from 'react';
 import { ReactComponent as BulbOffIcon } from '../assets/svg/bulbOff.svg';
 import { ReactComponent as BulbOnIcon } from '../assets/svg/bulbOn.svg';
-import { BulbContext } from '../Utility/BulbContext';
+import { LampContext } from '../Utility/LampContext';
 import DetailTitle from './DetailTitle';
 
 
 const Intensity = () => {
-  const { sliderVal, setSliderVal } = useContext(BulbContext);
+  const { sliderVal, setSliderVal } = useContext(LampContext);
 
   return (
     <section>

@@ -1,9 +1,9 @@
 import { useContext, useState, useEffect } from 'react';
-import { BulbContext } from '../Utility/BulbContext';
+import { LampContext } from '../Utility/LampContext';
 import { motion } from "framer-motion";
 
 const Color = ({color, index}) => {
-  const {setColorPick} = useContext(BulbContext);
+  const {setLampColor} = useContext(LampContext);
   const [crntColor, setCrntColor] = useState(null);
   const value = parseInt(`-${10*index/2}`);
   useEffect(()=>{setCrntColor(color)}, [color]);
@@ -13,9 +13,9 @@ const Color = ({color, index}) => {
       initial={{x: value}}
       animate={{x: 0}}
       transition={{duration: 1, delay: 1}}
-      className="w-7 h-7 rounded-full cursor-pointer" 
+      className="w-7 h-7 rounded-full cursor-pointer shadow-sm" 
       style={{backgroundColor: color}}
-      onClick={()=>setColorPick(crntColor)}
+      onClick={()=>setLampColor(crntColor)}
     >
     </motion.li>
   );
