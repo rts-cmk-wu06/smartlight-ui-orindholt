@@ -8,7 +8,7 @@ export const Lights = ({amount}) => {
       animate={{y: 5, opacity: 1}}
       transition={{duration: 1, delay: 1}}
     >
-      {amount}{' '}{amount == 1 ? "Light" : "Lights"}
+      {amount}{' '}{amount === 1 ? "Light" : "Lights"}
     </motion.h3>
   );
 }

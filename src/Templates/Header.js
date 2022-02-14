@@ -11,7 +11,7 @@ import LightScenes from './LightScenes';
 const Header = () => {
   const { lampColor, lightAmount } = useContext(LampContext);
   const { pathname } = useLocation();
-  
+
   return (
     <header className="p-6 pt-[50px] pb-0 relative">
       <Routes>

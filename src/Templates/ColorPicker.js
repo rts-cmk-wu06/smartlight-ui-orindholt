@@ -4,7 +4,7 @@ import Color from "../Components/Color";
 import DetailTitle from "../Components/DetailTitle";
 import NewColor from "../Components/NewColor";
 
-const lampColor = () => {
+const LampColor = () => {
   const [colors, setColors] = useState(["#FF9898","#94EB9E","#94CAEB","#A594EB","#DE94EB","#EBD094"]);
   const newColor = (color) => {
     setColors([...colors, color]);
@@ -20,4 +20,4 @@ const lampColor = () => {
   );
 }
  
-export default lampColor;
+export default LampColor;
